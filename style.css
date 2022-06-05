@@ -1,0 +1,225 @@
+:root {
+	--geist-background: #000;
+	--geist-foreground: #fff;
+	--geist-page-width-with-margin: 1048px;
+	--geist-secondary: var(--accents-5);
+	--geist-page-margin: var(--geist-space-gap);
+	--geist-space: 4px;
+	--geist-space-2x: 8px;
+	--geist-space-4x: 16px;
+	--geist-space-8x: 32px;
+	--geist-space-16x: 64px;
+	--geist-space-24x: 96px;
+	--geist-space-32x: 128px;
+	--geist-space-48x: 192px;
+	--geist-space-64x: 256px;
+	--geist-space-small: 32px;
+	--geist-space-medium: 40px;
+	--geist-space-large: 48px;
+	--geist-space-gap: 24px;
+	--geist-space-gap-half: 12px;
+	--geist-space-gap-quarter: var(--geist-space-2x);
+	--geist-gap: var(--geist-space-gap);
+	--geist-gap-half: var(--geist-space-gap-half);
+	--geist-gap-quarter: var(--geist-space-gap-quarter);
+	--geist-gap-double: var(--geist-space-large);
+	--geist-space-2x-negative: -8px;
+	--header-height: 64px;
+	--header-background: rgba(0,0,0,.5);
+	--header-border-bottom: inset 0 -1px 0 0 hsla(0,0%,100%,.1);
+	--font-sans: "Inter";
+	--accents-8: #fafafa;
+	--accents-7: #eaeaea;
+	--accents-6: #999;
+	--accents-5: #888;
+	--accents-4: #666;
+	--accents-3: #444;
+	--accents-2: #333;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	font-family: var(--font-sans);
+	background-color: var(--geist-background);
+	color: var(--geist-foreground);
+}
+
+.header-wrapper {
+	position: sticky;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 100%;
+	z-index: 101;
+	min-height: var(--header-height);
+	background-color: var(--header-background);
+}
+
+.header-wrapper.header-no-border {
+	box-shadow: none;
+	transition: box-shadow .2s ease 0s,background-color .2s ease 0s;
+}
+
+.header-wrapper.header-border {
+	box-shadow: var(--header-border-bottom);
+	transition: box-shadow .2s ease 0s,background-color: .2s ease 0s;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: var(--full);
+	margin: auto;
+	padding-left: var(--geist-page-margin);
+	padding-right: var(--geist-page-margin);
+}
+
+.header-brand {
+	color: #fff;
+	height: var(--geist-space-16x);
+	text-align: center;
+	font-weight: 800;
+	line-height: var(--geist-space-16x);
+	font-size: 2.5em !important;
+}
+
+.header-nav {
+	flex: 1 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-nav-second {
+	display: flex;
+	flex: 1 1;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	width: 100%;
+	background-color: transparent;
+}
+
+.header-left {
+	display: flex;
+	align-items: center;
+	will-change: opacity;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-size: .875rem;
+	transition: opacity .2s ease-in-out;
+}
+
+.header-right {
+	display: flex;
+	align-items: center;
+	will-change: opacity;
+	list-style-type: none;
+	padding: 0;
+	margin: auto;
+	font-size: .875rem;
+	transition: opacity .2s ease-in-out;
+}
+
+.header-nav li + li {
+	margin-left: 12px;
+}
+
+.header-nav-second li + li {
+	margin-left: 12px;
+}
+
+.header-link-padding {
+	padding: 8px;
+	display: inline-block;
+}
+
+.link-secondary {
+	color: #888;
+	transition: color .1s ease;
+}
+
+.link {
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+	font-size: .875rem;
+}
+
+.link-secondary:hover {
+	color: #fff;
+}
+
+.header-logo {
+	background: none;
+	border: none;
+	padding: var(--geist-space-2x);
+	margin: var(--geist-space-2x-negative);
+	cursor: pointer;
+	display: inline-flex;
+	position: relative;
+}
+
+.geist-wrapper {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--geist-page-width-with-margin);
+	padding-left: var(--geist-page-margin);
+	padding-right: var(--geist-page-margin);
+}
+
+.geist-container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	min-width: 1px;
+	max-width: 100%;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.hero-texts {
+	padding: 3.5rem 0;
+}
+
+.hero-title {
+	font-size: 8rem;
+	font-weight: 800;
+	letter-spacing: -.06em;
+	margin: 0 0 16px;
+	text-align: center;
+	line-height: 1;
+}
+
+.hero-description {
+	line-height: 1.6em !important;
+	color: var(--geist-secondary);
+	font-weight: 400;
+	font-size: 1rem;
+	letter-spacing: -.02em;
+	text-align: center;
+	margin: var(--geist-space-16x) 0 var(--geist-space-16x);
+}
+
+.text-bg {
+	position: relative;
+	display: block;
+	user-select: none;
+}
+
+.text-fg {
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	padding-left: var(--padding);
+	padding-right: var(--padding);
+	background-image: linear-gradient(90deg,var(--start-color),var(--end-color));
+}
